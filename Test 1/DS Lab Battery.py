@@ -4,8 +4,6 @@ import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
 
-bettery=[]
-battery = [0 for i in range(10)] 
 
 class GraphVisualization:
    
@@ -33,7 +31,7 @@ arr=np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
 
 with open(filename, 'r') as csvfile:
     csvreader = csv.reader(csvfile)
-    fields = next(csvreader)
+    next(csvreader)
   
 
     for row in csvreader:
