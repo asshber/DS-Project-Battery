@@ -1,4 +1,3 @@
-# importing csv module
 import csv
 import networkx as nx
 import numpy as np
@@ -43,11 +42,11 @@ with open(filename, 'r') as csvfile:
                index=int(row[x])
                arr[index-1]=int(row[x+1])
                G.addEdge(source,row[x])
-
+    G.visualize()
+    print(arr)
 
             
 
 
 
-    G.visualize()
-    print(arr)
+    
