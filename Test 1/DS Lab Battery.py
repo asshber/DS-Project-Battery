@@ -1,6 +1,7 @@
 # importing csv module
 import csv
 import networkx as nx
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -26,7 +27,7 @@ G = GraphVisualization()
 
 filename = "test.csv"
   
-
+arr=np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
   
 
 with open(filename, 'r') as csvfile:
@@ -36,8 +37,12 @@ with open(filename, 'r') as csvfile:
 
     for row in csvreader:
        source = row[2]
+       index=int(source)
+       arr[index-1]=row[8]
        for x in range(10,30,2):
            if row[x]!='0':
+               index=int(row[x])
+               arr[index-1]=int(row[x+1])
                G.addEdge(source,row[x])
 
 
@@ -46,3 +51,4 @@ with open(filename, 'r') as csvfile:
 
 
     G.visualize()
+    print(arr)
