@@ -4,7 +4,8 @@ import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
 
-
+bettery=[]
+battery = [0 for i in range(10)] 
 
 class GraphVisualization:
    
