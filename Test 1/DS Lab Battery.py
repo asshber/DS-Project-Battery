@@ -7,16 +7,16 @@ import matplotlib.pyplot as plt
 class GraphVisualization:
    
     def __init__(self):
-        self.visual = []
+        self.edgelist = []
    
-    def addEdge(self, a, b):
-        temp = [a, b]
-        self.visual.append(temp)
+    def addEdge(self, s, d):
+        tempedge = [s, d]
+        self.edgelist.append(tempedge)
           
 
     def visualize(self):
         G = nx.Graph()
-        G.add_edges_from(self.visual)
+        G.add_edges_from(self.edgelist)
         nx.draw_networkx(G)
         plt.show()
   
@@ -37,7 +37,7 @@ with open(filename, 'r') as csvfile:
        source = row[2]
        index=int(source)
        arr[index-1]=row[8]
-       for x in range(10,30,2):
+       for x in range(10,31,2):
            if row[x]!='0':
                index=int(row[x])
                arr[index-1]=int(row[x+1])
