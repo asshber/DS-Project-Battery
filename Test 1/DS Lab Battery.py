@@ -3,7 +3,8 @@ import csv
 import networkx as nx
 import matplotlib.pyplot as plt
 
-
+bettery=[]
+battery = [0 for i in range(10)] 
 
 class GraphVisualization:
    
